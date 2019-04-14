@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: api-getaway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    product:
+      path: /myProduct/**
+      serviecId: product
+#management:
+#  security:
+#    enabled: true
